@@ -36,11 +36,39 @@ namespace sweepstakes
             Console.WriteLine($"Registration Number: {contestant.RegNumber}");
         }
 
+        public static int ChooseManagerType()
+        {
+            Console.WriteLine("Please choose manager tpye..");
+            Console.WriteLine("[1]:Stack Manager [2]:Queue Manager");
+            string userInput = Console.ReadLine();
+            int type = ValidateUserInputForIntegers(userInput, "Please enter a number.. /n[1]:Stack Manager [2]:Queue Manager");
+            return type;
+        }
+
+        public static int ValidateUserInputForIntegers(string userInput, string message) 
+        {
+            bool isValid;
+            int amount;
+            do {
+                isValid = int.TryParse(userInput, out amount);
+                if (!isValid) {
+                    Console.WriteLine(message);
+                    userInput = Console.ReadLine();
+                }
+            } while (!isValid);
+            return amount;
+        }
+
         public static string SetSweepstakesName()
         {
             Console.WriteLine("Enter sweepstakes name: ");
             string sweepstakesName = Console.ReadLine().ToString();
             return sweepstakesName;
+        }
+
+        public static void StartingApp()
+        {
+            Console.WriteLine("Please press enter to create a sweepstake...");
         }
     }
 }
