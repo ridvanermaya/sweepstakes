@@ -8,12 +8,12 @@ namespace sweepstakes
         Stack data;
 
         // member methods
-        public sweepstakes GetSweepstakes()
+        public Sweepstakes GetSweepstakes()
         {
             throw new System.NotImplementedException();
         }
 
-        public void InsertSweepstakes(sweepstakes sweepstakes)
+        public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
             throw new System.NotImplementedException();
         }

@@ -1,16 +1,17 @@
+using System;
 using System.Collections.Generic;
 
 namespace sweepstakes
 {
-    public class sweepstakes
+    public class Sweepstakes
     {
         // member variables
-        Dictionary<TKey, TValue> data;
+        Dictionary<int, Contestant> contestants;
         string name;
 
 
         // constructor
-        public sweepstakes(string name)
+        public Sweepstakes(string name)
         {
             this.name = name;
         }
@@ -18,7 +19,7 @@ namespace sweepstakes
         // member methods
         public void RegisterContestant(Contestant contestant)
         {
-
+            contestants.Add(contestant.RegNumber, contestant);
         }
 
         public string PickWinner()
@@ -29,7 +30,7 @@ namespace sweepstakes
 
         public void PrintContestantInfo(Contestant contestant)
         {
-
+            UserInterface.DisplayContestantInformation(contestant);
         }
     }
 }
