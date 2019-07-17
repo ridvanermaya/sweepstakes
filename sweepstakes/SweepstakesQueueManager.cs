@@ -1,21 +1,25 @@
 using System.Collections;
+using System.Collections.Generic;
 
 namespace sweepstakes
 {
     public class SweepstakesQueueManager : ISweepstakesManager
     {
         // member variables
-        Queue sweepstakesList;
+        Queue<Sweepstakes> sweepstakesList;
 
         // constructor
         public SweepstakesQueueManager()
         {
-            sweepstakesList = new Queue();
+            sweepstakesList = new Queue<Sweepstakes>();
         }
+        
         // member methods
         public Sweepstakes GetSweepstakes()
         {
-            throw new System.NotImplementedException();
+            Sweepstakes sweepstakes;
+            sweepstakes = sweepstakesList.Dequeue();
+            return sweepstakes;
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
