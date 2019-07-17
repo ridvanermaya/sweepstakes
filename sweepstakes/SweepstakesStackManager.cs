@@ -5,17 +5,24 @@ namespace sweepstakes
     public class SweepstakesStackManager : ISweepstakesManager
     {
         // member variables
-        Stack data;
+        Stack sweepstakesList;
+
+        // constructor
+        public SweepstakesStackManager()
+        {
+            sweepstakesList = new Stack();
+        }
 
         // member methods
         public Sweepstakes GetSweepstakes()
         {
-            throw new System.NotImplementedException();
+            Sweepstakes sweepstakes = new Sweepstakes("red");
+            return sweepstakes;
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            throw new System.NotImplementedException();
+            this.sweepstakesList.Push(sweepstakes);
         }
     }
 }

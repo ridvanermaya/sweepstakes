@@ -3,20 +3,20 @@ namespace sweepstakes
     public class Contestant
     {
         // member variables
-        private int firstName;
-        public int FirstName
+        private string firstName;
+        public string FirstName
         {
             get { return firstName; }
             set { firstName = value; }
         }
-        private int lastName;
-        public int LastName
+        private string lastName;
+        public string LastName
         {
             get { return lastName; }
             set { lastName = value; }
         }
-        private int emailAddress;
-        public int EmailAddress
+        private string emailAddress;
+        public string EmailAddress
         {
             get { return emailAddress; }
             set { emailAddress = value; }
@@ -27,15 +27,13 @@ namespace sweepstakes
             get { return regNumber; }
             set { regNumber = value; }
         }
-        
 
         // constructor
-        public Contestant(string firstName, string lastName, string emailAddress, int regNumber)
+        public Contestant()
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.emailAddress = emailAddress;
-            this.regNumber = regNumber;
+            this.firstName = UserInterface.SetContestantFirstName();
+            this.lastName = UserInterface.SetContestantLastName();
+            this.emailAddress = UserInterface.SetContestantEmail();
         }
         
         // member methods

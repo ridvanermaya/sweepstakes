@@ -5,17 +5,22 @@ namespace sweepstakes
     public class SweepstakesQueueManager : ISweepstakesManager
     {
         // member variables
-        Queue data;
+        Queue sweepstakesList;
 
+        // constructor
+        public SweepstakesQueueManager()
+        {
+            sweepstakesList = new Queue();
+        }
         // member methods
-        public sweepstakes GetSweepstakes()
+        public Sweepstakes GetSweepstakes()
         {
             throw new System.NotImplementedException();
         }
 
-        public void InsertSweepstakes(sweepstakes sweepstakes)
+        public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            throw new System.NotImplementedException();
+            sweepstakesList.Enqueue(sweepstakes);
         }
     }
 }

@@ -21,14 +21,9 @@ namespace sweepstakes
 
         public static string SetContestantEmail()
         {
-            Console.WriteLine("Enter contestant's email address: Ex:[ridvanermaya@gmail.com");
+            Console.WriteLine("Enter contestant's email address: Ex:[ridvanermaya@gmail.com]");
             string email = Console.ReadLine().ToString();
             return email;
-        }
-
-        public static int SetContestantRegNumber()
-        {
-            
         }
 
         public static void DisplayContestantInformation(Contestant contestant)
@@ -39,6 +34,13 @@ namespace sweepstakes
             Console.WriteLine($"Last Name: {contestant.LastName}");
             Console.WriteLine($"Email Address: {contestant.EmailAddress}");
             Console.WriteLine($"Registration Number: {contestant.RegNumber}");
+        }
+
+        public static string SetSweepstakesName()
+        {
+            Console.WriteLine("Enter sweepstakes name: ");
+            string sweepstakesName = Console.ReadLine().ToString();
+            return sweepstakesName;
         }
     }
 }
