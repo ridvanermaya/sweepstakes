@@ -43,13 +43,15 @@ namespace sweepstakes
             manager.Name = name;
         }
 
-        public void ChooseManagerType()
+        public ISweepstakesManager ChooseManagerType()
         {
-            manager = UserInterface.ChooseManagerType();
+            int manager = UserInterface.ChooseManagerType();
             switch (manager)
             {
-                
-                default:
+                case 1:
+                    return new SweepstakesStackManager();
+                case 2:
+                    return new SweepstakesQueueManager();
             }
         }
     }
