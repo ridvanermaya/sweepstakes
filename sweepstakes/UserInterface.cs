@@ -83,7 +83,7 @@ namespace sweepstakes
             Console.WriteLine("\nIn this app, you will be able to choose the type of manager.(Queue or Stack)");
             Console.WriteLine("When you choose your manager type, you can create sweepstakes and insert them as the manager.");
             Console.WriteLine("You will be prompted to add contestants to your sweepstakes.");
-            Console.WriteLine("You can a")
+            Console.WriteLine("You can a");
             Console.WriteLine("When you have your contestants, the app can pick a random winner.");
         }
     }

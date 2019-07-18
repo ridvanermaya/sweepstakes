@@ -7,13 +7,6 @@ namespace sweepstakes
     {
         // member variables
         Stack<Sweepstakes> sweepstakesList;
-        private string name;
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-        
 
         // constructor
         public SweepstakesStackManager()

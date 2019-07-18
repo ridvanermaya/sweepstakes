@@ -7,13 +7,6 @@ namespace sweepstakes
     {
         // member variables
         Queue<Sweepstakes> sweepstakesList;
-        private string name;
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-        
 
         // constructor
         public SweepstakesQueueManager()

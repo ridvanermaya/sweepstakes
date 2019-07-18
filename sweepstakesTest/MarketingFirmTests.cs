@@ -1,18 +1,14 @@
 using NUnit.Framework;
+using sweepstakes;
+using FluentAssertions;
 
 namespace Tests
 {
-    public class Tests
+    public class MarketingFirmTests
     {
         [SetUp]
         public void Setup()
         {
-        }
-
-        [Test]
-        public void Test1()
-        {
-            Assert.Pass();
         }
     }
 }

@@ -9,9 +9,9 @@ namespace sweepstakes
         ISweepstakesManager manager;
 
         // constructor
-        public MarketingFirm()
+        public MarketingFirm(ISweepstakesManager manager)
         {
-            
+            this.manager = manager;
         }
 
         // member methods
@@ -32,20 +32,6 @@ namespace sweepstakes
             Console.Clear();
             UserInterface.WelcomeMessage();
             UserInterface.AppInfo();
-        }
-
-        public ISweepstakesManager ChooseManagerType()
-        {
-            int manager = UserInterface.ChooseManagerType();
-            switch (manager)
-            {
-                case 1:
-                    return new SweepstakesStackManager();
-                case 2:
-                    return new SweepstakesQueueManager();
-                default:
-                    return ChooseManagerType();
-            }
         }
     }
 }
