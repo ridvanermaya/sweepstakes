@@ -52,6 +52,8 @@ namespace sweepstakes
                     return new SweepstakesStackManager();
                 case 2:
                     return new SweepstakesQueueManager();
+                default:
+                    return ChooseManagerType();
             }
         }
     }
