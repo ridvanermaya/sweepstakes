@@ -6,7 +6,8 @@ namespace sweepstakes
     {
         static void Main(string[] args)
         {
-            
+            MarketingFirm marketingFirm = new MarketingFirm();
+            marketingFirm.RunApp();
         }
     }
 }

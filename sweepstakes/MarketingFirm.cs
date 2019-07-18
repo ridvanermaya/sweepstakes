@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace sweepstakes
@@ -28,19 +29,9 @@ namespace sweepstakes
 
         public void RunApp()
         {
-            UserInterface.StartingApp();
-        }
-
-        public void AddSweepstakesStackManager(string name)
-        {
-            SweepstakesStackManager manager = new SweepstakesStackManager();
-            manager.Name = name;
-        }
-
-        public void AddSweepstakesQueueManager(string name)
-        {
-            SweepstakesQueueManager manager = new SweepstakesQueueManager();
-            manager.Name = name;
+            Console.Clear();
+            UserInterface.WelcomeMessage();
+            UserInterface.AppInfo();
         }
 
         public ISweepstakesManager ChooseManagerType()

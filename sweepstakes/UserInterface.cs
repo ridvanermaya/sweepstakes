@@ -66,9 +66,25 @@ namespace sweepstakes
             return sweepstakesName;
         }
 
-        public static void StartingApp()
+        public static void WelcomeMessage()
         {
-            Console.WriteLine("Please press enter to create a sweepstake...");
+            string msg = "----- Welcome to The Sweepstakes Creator -----";
+            CenterText(msg);
+        }
+
+        public static void CenterText(string msg)
+        {
+            Console.SetCursorPosition((Console.WindowWidth - msg.Length) / 2, Console.CursorTop);
+            Console.WriteLine(msg); 
+        }
+
+        public static void AppInfo()
+        {
+            Console.WriteLine("\nIn this app, you will be able to choose the type of manager.(Queue or Stack)");
+            Console.WriteLine("When you choose your manager type, you can create sweepstakes and insert them as the manager.");
+            Console.WriteLine("You will be prompted to add contestants to your sweepstakes.");
+            Console.WriteLine("You can a")
+            Console.WriteLine("When you have your contestants, the app can pick a random winner.");
         }
     }
 }

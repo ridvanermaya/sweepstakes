@@ -31,8 +31,10 @@ namespace sweepstakes
         public string PickWinner()
         {
             int randomNumber = rng.Next(20190000, (20190000 + contestants.Count));
-            string winnerKey = randomNumber.ToString();
-            return winnerKey;
+            Contestant winnerContestant;
+            winnerContestant = contestants.GetValueOrDefault(randomNumber);
+            string winnerKey = $"{winnerContestant.FirstName} + {winnerContestant.LastName} won the sweepstakes. Registration Number: {randomNumber}";
+            return $"{winnerContestant}";
         }
 
         public void PrintContestantInfo(Contestant contestant)
