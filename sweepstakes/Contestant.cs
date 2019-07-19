@@ -1,6 +1,8 @@
+using System;
+
 namespace sweepstakes
 {
-    public class Contestant
+    public class Contestant : ISubscriber
     {
         // member variables
         private string firstName;
@@ -35,7 +37,13 @@ namespace sweepstakes
             this.lastName = UserInterface.SetContestantLastName();
             this.emailAddress = UserInterface.SetContestantEmail();
         }
+
         
+
         // member methods
+        public void Notify(ISubscriber subscriber)
+        {
+            Console.WriteLine("Done!");
+        }
     }
 }

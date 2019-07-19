@@ -7,18 +7,26 @@ namespace sweepstakes
     {
         // member variables
         ISweepstakesManager manager;
+        private List<ISubscriber> subscribers;
 
         // constructor
         public MarketingFirm(ISweepstakesManager manager)
         {
             this.manager = manager;
+            subscribers = new List<ISubscriber>();
         }
 
         // member methods
-        public void CreateSweepstake()
+        private string SetSweepstakesName()
         {
-            string name = UserInterface.SetSweepstakesName();
-            manager.InsertSweepstakes(new Sweepstakes(name));
+            string sweepsteakesName = UserInterface.SetSweepstakesName();
+            return sweepsteakesName;
+        }
+
+        public Sweepstakes CreateSweepStakes()
+        {
+            Sweepstakes sweepstakes;
+            return sweepstakes = new Sweepstakes(SetSweepstakesName());
         }
 
         public Contestant CreateContestent()
@@ -32,6 +40,24 @@ namespace sweepstakes
             Console.Clear();
             UserInterface.WelcomeMessage();
             UserInterface.AppInfo();
+        }
+
+        public void Subscribe(ISubscriber subcriber)
+        {
+            subscribers.Add(subcriber);
+        }
+
+        public void Unsubscribe(ISubscriber subscriber)
+        {
+            subscribers.Remove(subscriber);
+        }
+
+        public void NotifySubscribers()
+        {
+            foreach (ISubscriber subscriber in subscribers)
+            {
+                subscriber.Notify(subscriber);
+            }
         }
     }
 }

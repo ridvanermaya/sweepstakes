@@ -24,6 +24,7 @@ namespace sweepstakes
         // member methods
         public void RegisterContestant(Contestant contestant)
         {
+            contestant.RegNumber = regNumberCount;
             contestants.Add(regNumberCount, contestant);
             regNumberCount++;
         }
@@ -33,7 +34,7 @@ namespace sweepstakes
             int randomNumber = rng.Next(20190000, (20190000 + contestants.Count));
             Contestant winnerContestant;
             winnerContestant = contestants.GetValueOrDefault(randomNumber);
-            string winner = $"{winnerContestant.FirstName} + {winnerContestant.LastName} won the sweepstakes. Registration Number: {randomNumber}";
+            string winner = $"{winnerContestant.FirstName} {winnerContestant.LastName} won the sweepstakes. Registration Number: {randomNumber}";
             return winner;
         }
 

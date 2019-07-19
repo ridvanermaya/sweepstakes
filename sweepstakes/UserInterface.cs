@@ -41,7 +41,7 @@ namespace sweepstakes
             Console.WriteLine("Please choose manager tpye..");
             Console.WriteLine("[1]:Stack Manager [2]:Queue Manager");
             string userInput = Console.ReadLine();
-            int type = ValidateUserInputForIntegers(userInput, "Please enter a number.. /n[1]:Stack Manager [2]:Queue Manager");
+            int type = ValidateUserInputForIntegers(userInput, "Please enter a number.. \n[1]:Stack Manager [2]:Queue Manager");
             return type;
         }
 

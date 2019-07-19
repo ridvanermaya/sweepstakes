@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 namespace sweepstakes
 {
-    public class SweepstakesQueueManager : ISweepstakesManager
+    public class SweepstakesQueueManager : ISweepstakesManager, ISubscriber
     {
         // member variables
-        Queue<Sweepstakes> sweepstakesList;
+        public Queue<Sweepstakes> sweepstakesList;
 
         // constructor
         public SweepstakesQueueManager()
@@ -25,6 +26,11 @@ namespace sweepstakes
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
             sweepstakesList.Enqueue(sweepstakes);
+        }
+
+        public void Notify(ISubscriber subscriber)
+        {
+            Console.WriteLine("Done");
         }
     }
 }
